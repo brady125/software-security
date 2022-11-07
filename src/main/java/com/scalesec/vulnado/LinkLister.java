@@ -18,7 +18,7 @@ public class LinkLister {
       result.add(link.absUrl("href"));
     }
     return result;
-  }// hellovojojofedjoje
+  }
 
   public static List<String> getLinksV2(String url) throws BadRequest {
     try {
