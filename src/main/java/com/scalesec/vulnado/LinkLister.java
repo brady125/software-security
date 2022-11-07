@@ -9,7 +9,6 @@ import java.util.List;
 import java.io.IOException;
 import java.net.*;
 
-
 public class LinkLister {
   public static List<String> getLinks(String url) throws IOException {
     List<String> result = new ArrayList<String>();
@@ -19,19 +18,19 @@ public class LinkLister {
       result.add(link.absUrl("href"));
     }
     return result;
-  }
+  }// hellovojojofedjoje
 
   public static List<String> getLinksV2(String url) throws BadRequest {
     try {
-      URL aUrl= new URL(url);
+      URL aUrl = new URL(url);
       String host = aUrl.getHost();
       System.out.println(host);
-      if (host.startsWith("172.") || host.startsWith("192.168") || host.startsWith("10.")){
+      if (host.startsWith("172.") || host.startsWith("192.168") || host.startsWith("10.")) {
         throw new BadRequest("Use of Private IP");
       } else {
         return getLinks(url);
       }
-    } catch(Exception e) {
+    } catch (Exception e) {
       throw new BadRequest(e.getMessage());
     }
   }

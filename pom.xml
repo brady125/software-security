@@ -72,7 +72,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+						<goals>
+							<goal>java</goal>
+						</goals>
+				<configuration>
+					<mainClass>com.scalesec.App</mainClass>
+				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 

@@ -28,9 +28,9 @@ public class User {
     try {
       SecretKey key = Keys.hmacShaKeyFor(secret.getBytes());
       Jwts.parser()
-        .setSigningKey(key)
-        .parseClaimsJws(token);
-    } catch(Exception e) {
+          .setSigningKey(key)
+          .parseClaimsJws(token);
+    } catch (Exception e) {
       e.printStackTrace();
       throw new Unauthorized(e.getMessage());
     }
@@ -56,7 +56,7 @@ public class User {
       cxn.close();
     } catch (Exception e) {
       e.printStackTrace();
-      System.err.println(e.getClass().getName()+": "+e.getMessage());
+      System.err.println(e.getClass().getName() + ": " + e.getMessage());
     } finally {
       return user;
     }
